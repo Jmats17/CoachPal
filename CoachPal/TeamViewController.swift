@@ -7,13 +7,22 @@
 //
 
 import UIKit
-
+import RealmSwift
+import Realm
 class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView : UITableView!
-    var team = Team()
+    let realm = try! Realm()
+    var team : Team? = nil
     var teams = [Team]()
-    
+    var results : Results<Team>!
+    func readTasksAndUpdateUI(){
+        
+        results = realm.objects(Team)
+        self.tableView.setEditing(false, animated: true)
+        self.tableView.reloadData()
+    }
+
     @IBAction func addTeam() {
         var teamNameTextField : UITextField?
         let alertController = UIAlertController(title: "Add Team", message: "Add your team name below", preferredStyle: .Alert)
@@ -22,19 +31,15 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
             teamNameTextField?.placeholder = "South Golden Hawks"
         }
         let okAction = UIAlertAction(title: "Add", style: .Default) { (action) in
-            print("Ok pressed")
-            
-            
-            if let teamName = teamNameTextField?.text {
-                
-                self.team.teamName = teamName
-                self.teams.append(self.team)
+            if teamNameTextField?.text != "" {
+                let team = Team()
+                team.teamName = (teamNameTextField?.text)!
+                self.teams.append(team)
+                try! self.realm.write({ () -> Void in
+                    self.realm.add(self.teams)
+                    self.readTasksAndUpdateUI()
+                })
             }
-            else {
-                self.team.teamName = "Team"
-                self.teams.append(self.team)
-            }
-            self.tableView.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
             print("cancel pressed")
@@ -49,35 +54,59 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
-   
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        readTasksAndUpdateUI()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        let selectedTeam = results[indexPath.row]
+        team = selectedTeam
+        
+        self.performSegueWithIdentifier("teamtoroster", sender: self)
+        
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "teamtoroster") {
+            
+            let rosterViewController = segue.destinationViewController as! RosterViewController
+            rosterViewController.team = team
+            
+            
+        }
+
+    }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if teams.count == 0 {
+        if results.count == 0 {
             return 0
         }
         else {
-            return teams.count
+            return results.count
         }
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCellWithIdentifier("TeamCell") as! TeamCell
-        var sortedTeam = teams.sort { $0.teamName < $1.teamName }
-
-        let team = sortedTeam[indexPath.row]
+        let team = results[indexPath.row]
         
         cell.teamName.text = team.teamName
-        
+            
         return cell
+        
     }
 }
 

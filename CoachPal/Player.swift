@@ -8,13 +8,14 @@
 
 import Foundation
 import UIKit
+import RealmSwift
 
-struct Player {
-    var name = ""
-    var age : Int? = nil
-    var wins : Int? = nil
-    var losses : Int? = nil
-    var plays = [Play]()
-    var height = "5'10"
-    var weight = 135
+class Player : Object {
+    dynamic var name : String = ""
+    dynamic var age : Int = 0
+    dynamic var wins : Int = 0
+    dynamic var losses : Int = 0
+    var plays = List<Play>()
+    dynamic var height : String = "5'10"
+    dynamic var weight : Double = 0.0
 }

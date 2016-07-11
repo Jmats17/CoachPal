@@ -8,10 +8,12 @@
 
 import Foundation
 import UIKit
+import RealmSwift
+import Realm
 
-struct Team {
-    var teamName = ""
-    var teamList = [Player]()
+class Team : Object {
+   dynamic var teamName = ""
+   var teamList = List<Player>()
     
     
 }
