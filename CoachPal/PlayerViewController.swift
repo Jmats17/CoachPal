@@ -11,13 +11,13 @@ import UIKit
 import Realm
 import RealmSwift
 
-class PlayerViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PlayerViewController : UIViewController {
     
     var player : Player!
     @IBOutlet var nameAndAgeLabel : UILabel!
     @IBOutlet var weightAndHeightLabel : UILabel!
     @IBOutlet var recordLabel : UILabel!
-    @IBOutlet var tableView : UITableView!
+    @IBOutlet var profileImage : UIImageView!
     
     func loadPlayerInfo() {
         if let name = player.name  {
@@ -66,25 +66,23 @@ class PlayerViewController : UIViewController, UITableViewDelegate, UITableViewD
 
             }
         }
+        if let profImage = player.profilePicture {
+            
+            profileImage.image = UIImage(data: profImage)
+        }
+        else {
+            profileImage.image = profileImage.image
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
         loadPlayerInfo()
+        profileImage.layer.cornerRadius =  profileImage.frame.size.width / 2
+        profileImage.clipsToBounds = true
+        
     }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PlayerCell") as! PlayerCell
-        return cell
-    }
-    
+  
     
     
     

@@ -11,16 +11,29 @@ import UIKit
 import Realm
 import RealmSwift
 
-class PlayerFormViewController : FormViewController {
+class PlayerFormViewController : FormViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var player = Player()
-    
     var team : Team!
     var realm = try! Realm()
+    let picker = UIImagePickerController()
+    var imageData : NSData?
     
     override func viewDidLoad() {
+        picker.delegate = self
         createForm()
         team = Data.sharedInstance.team
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        dismissViewControllerAnimated(true, completion: nil)
+        let ogImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        let data : NSData = UIImagePNGRepresentation(ogImage!)!
+        imageData = data
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func createForm() {
@@ -41,11 +54,39 @@ class PlayerFormViewController : FormViewController {
         let heightRow = FormRowDescriptor(tag: "Height", type: .Text, title: "Height:")
         basicInfoSection.rows.append(heightRow)
         
-        let picRow = FormRowDescriptor(tag: "Image", type: .Button, title: "Profile Picture:")
+        let picSection = FormSectionDescriptor(headerTitle: "Player Picture", footerTitle: nil)
+        
+        let picRow = FormRowDescriptor(tag: "Image", type: .Button, title: "Select Profile Picture")
         picRow.configuration.button.didSelectClosure = { _ in
             
+            let pictureMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+            
+            let choosePhoto = UIAlertAction(title: "Photo Album", style: .Default, handler: { (alert : UIAlertAction) in
+                self.picker.allowsEditing = false
+                self.picker.sourceType = .PhotoLibrary
+                self.presentViewController(self.picker, animated: true, completion: nil)
+            })
+            
+            let takePhoto = UIAlertAction(title: "Camera", style: .Default, handler: { (alert : UIAlertAction) in
+                self.picker.allowsEditing = false
+                self.picker.sourceType = UIImagePickerControllerSourceType.Camera
+                self.picker.cameraCaptureMode = .Photo
+                self.picker.modalPresentationStyle = .FullScreen
+                self.presentViewController(self.picker, animated: true, completion: nil)
+            })
+            
+            let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (alert : UIAlertAction) in
+                
+            })
+            
+            pictureMenu.addAction(choosePhoto)
+            pictureMenu.addAction(takePhoto)
+            pictureMenu.addAction(cancel)
+            
+            self.presentViewController(pictureMenu, animated: true, completion: nil)
+            
         }
-        basicInfoSection.rows.append(picRow)
+        picSection.rows.append(picRow)
         
         let recordInfoSection = FormSectionDescriptor(headerTitle: "Record Info", footerTitle: nil)
         
@@ -102,6 +143,12 @@ class PlayerFormViewController : FormViewController {
             else {
                 self.player.losses = "0"
             }
+            if self.imageData != nil {
+                self.player.profilePicture = self.imageData
+            }
+            else {
+                self.player.profilePicture = nil
+            }
         
             if nameRow.value != nil {
                 try! self.realm.write({
@@ -122,7 +169,7 @@ class PlayerFormViewController : FormViewController {
         
         submitSection.rows.append(submitRow)
         
-        form.sections = [basicInfoSection, recordInfoSection, submitSection]
+        form.sections = [basicInfoSection, picSection ,recordInfoSection, submitSection]
         self.form = form
     }
     
