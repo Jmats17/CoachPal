@@ -22,7 +22,7 @@ class PlayerViewController : UIViewController {
     func loadPlayerInfo() {
         if let name = player.name  {
             if let age = player.age {
-                nameAndAgeLabel.text = "\(name), \(age)"
+                nameAndAgeLabel.text = "\(name), \(age) yr."
 
             }
             else {
@@ -32,20 +32,20 @@ class PlayerViewController : UIViewController {
         }
         if let weight = player.weight {
             if let height = player.height {
-                weightAndHeightLabel.text = "\(weight) / \(height)"
+                weightAndHeightLabel.text = "\(weight) lb / \(height)"
             }
             else {
-                weightAndHeightLabel.text = "\(weight) / Height: ??"
+                weightAndHeightLabel.text = "\(weight) lb / Height: ??"
 
             }
         }
         else {
             if let height = player.height {
-                weightAndHeightLabel.text = "Weight: ?? / \(height)"
+                weightAndHeightLabel.text = "Weight: ?? lb / \(height)"
 
             }
             else {
-                weightAndHeightLabel.text = "Weight: ?? / Height: ??"
+                weightAndHeightLabel.text = "Weight: ?? lb / Height: ??"
             }
         }
         if let wins = player.wins {
@@ -83,7 +83,13 @@ class PlayerViewController : UIViewController {
         
     }
   
+    @IBAction func edit() {
+        
+    }
     
+    @IBAction func back() {
+        self.performSegueWithIdentifier("playertoroster", sender: self)
+    }
     
     
     
