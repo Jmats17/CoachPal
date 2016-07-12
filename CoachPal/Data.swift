@@ -11,5 +11,7 @@ import UIKit
 
 class Data {
     var team:Team? = nil
+    var player:Player? = nil
+    var cameFromPlayer : Bool? = false
     static let sharedInstance = Data()
 }

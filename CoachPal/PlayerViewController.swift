@@ -22,7 +22,7 @@ class PlayerViewController : UIViewController {
     func loadPlayerInfo() {
         if let name = player.name  {
             if let age = player.age {
-                nameAndAgeLabel.text = "\(name), \(age) yr."
+                nameAndAgeLabel.text = "\(name), \(age)"
 
             }
             else {
@@ -84,11 +84,14 @@ class PlayerViewController : UIViewController {
     }
   
     @IBAction func edit() {
-        
+        Data.sharedInstance.cameFromPlayer = true
+        Data.sharedInstance.player = player
+        self.presentViewController(PlayerFormViewController(), animated: true, completion: nil)
     }
     
     @IBAction func back() {
-        self.performSegueWithIdentifier("playertoroster", sender: self)
+        self.dismissViewControllerAnimated(true, completion: nil)
+      //  self.performSegueWithIdentifier("playertoroster", sender: self)
     }
     
     

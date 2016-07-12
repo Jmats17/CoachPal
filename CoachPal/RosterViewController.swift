@@ -23,7 +23,6 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        print(team)
     }
  
     
