@@ -191,10 +191,10 @@
             </objects>
             <point key="canvasLocation" x="961" y="337"/>
         </scene>
-        <!--View Controller-->
+        <!--Player View Controller-->
         <scene sceneID="1Q2-6z-uE1">
             <objects>
-                <viewController id="eap-WU-oeV" sceneMemberID="viewController">
+                <viewController id="eap-WU-oeV" customClass="PlayerViewController" customModule="CoachPal" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lip-FR-h2n"/>
                         <viewControllerLayoutGuide type="bottom" id="GUo-ES-tm3"/>
@@ -246,6 +246,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oF2-eD-YXd">
                                 <rect key="frame" x="0.0" y="382" width="600" height="218"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayerCell" id="Ern-Nq-KaK" customClass="PlayerCell" customModule="CoachPal" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ern-Nq-KaK" id="pZ4-cd-yhV">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="eap-WU-oeV" id="IxL-KW-jbX"/>
+                                    <outlet property="delegate" destination="eap-WU-oeV" id="Rgj-PR-ky1"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plays/Moves" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOL-AT-yXu">
                                 <rect key="frame" x="0.0" y="351" width="600" height="31"/>
@@ -283,6 +297,12 @@
                             <constraint firstItem="qJN-mq-x1V" firstAttribute="leading" secondItem="Ws8-L4-C2d" secondAttribute="leadingMargin" id="zJl-ru-p6T"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameAndAgeLabel" destination="qJN-mq-x1V" id="Awr-8c-djb"/>
+                        <outlet property="recordLabel" destination="FDh-E4-OW4" id="Ncr-OL-5ke"/>
+                        <outlet property="tableView" destination="oF2-eD-YXd" id="HSV-va-Y2f"/>
+                        <outlet property="weightAndHeightLabel" destination="cYd-hr-GwL" id="J9h-Il-Z5o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="icK-AU-UJF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

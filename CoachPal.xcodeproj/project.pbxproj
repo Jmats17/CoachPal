@@ -49,6 +49,7 @@
 		D0C0128C1D32EDE100488AE2 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0C012881D32EDE100488AE2 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0C0128F1D342AE800488AE2 /* PlayerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */; };
 		D0C012911D355A2D00488AE2 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012901D355A2D00488AE2 /* PlayerViewController.swift */; };
+		D0C012931D355D7D00488AE2 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012921D355D7D00488AE2 /* PlayerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		D0C012881D32EDE100488AE2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerFormViewController.swift; sourceTree = "<group>"; };
 		D0C012901D355A2D00488AE2 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		D0C012921D355D7D00488AE2 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,9 +256,9 @@
 		D0C012331D319C5700488AE2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */,
 				D0C011E71D31900300488AE2 /* TeamViewController.swift */,
 				D0C012371D31B0D700488AE2 /* RosterViewController.swift */,
-				D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */,
 				D0C012901D355A2D00488AE2 /* PlayerViewController.swift */,
 			);
 			name = ViewControllers;
@@ -267,6 +269,7 @@
 			children = (
 				D0C012351D319C8C00488AE2 /* TeamCell.swift */,
 				D0C012391D31B40800488AE2 /* RosterCell.swift */,
+				D0C012921D355D7D00488AE2 /* PlayerCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				D0C012521D32B02E00488AE2 /* FormDateCell.swift in Sources */,
 				D0C012591D32B02E00488AE2 /* FormSwitchCell.swift in Sources */,
 				D0C012191D3190F600488AE2 /* Play.swift in Sources */,
+				D0C012931D355D7D00488AE2 /* PlayerCell.swift in Sources */,
 				D0C012531D32B02E00488AE2 /* FormLabelCell.swift in Sources */,
 				D0C012381D31B0D700488AE2 /* RosterViewController.swift in Sources */,
 				D0C012601D32B03600488AE2 /* FormSelector.swift in Sources */,

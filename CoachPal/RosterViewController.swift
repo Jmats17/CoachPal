@@ -17,7 +17,7 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var tableView : UITableView!
     var team : Team!
     let realm = try! Realm()
-    
+    var player : Player? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +47,21 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
         }
         else {
             return team.teamList.count
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let selectedPlayer = team.teamList[indexPath.row]
+        player = selectedPlayer
+        
+        self.performSegueWithIdentifier("rostertoplayer", sender: self)
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "rostertoplayer") {
+            let playerViewController = segue.destinationViewController as! PlayerViewController
+            playerViewController.player = player
         }
     }
     

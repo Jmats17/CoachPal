@@ -41,6 +41,12 @@ class PlayerFormViewController : FormViewController {
         let heightRow = FormRowDescriptor(tag: "Height", type: .Text, title: "Height:")
         basicInfoSection.rows.append(heightRow)
         
+        let picRow = FormRowDescriptor(tag: "Image", type: .Button, title: "Profile Picture:")
+        picRow.configuration.button.didSelectClosure = { _ in
+            
+        }
+        basicInfoSection.rows.append(picRow)
+        
         let recordInfoSection = FormSectionDescriptor(headerTitle: "Record Info", footerTitle: nil)
         
         let winsRow = FormRowDescriptor(tag: "Wins", type: .Number, title: "Wins:")
