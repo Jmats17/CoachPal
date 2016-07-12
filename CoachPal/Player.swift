@@ -18,4 +18,5 @@ class Player : Object {
    // var plays = List<Play>()
     dynamic var height : String? = nil
     dynamic var weight : String? = nil
+    dynamic var profilePicture : NSData? = nil
 }

@@ -27,8 +27,9 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
     }
  
     
-    @IBAction func refresh() {
-        self.tableView.reloadData()
+    @IBAction func back() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     override func viewDidAppear(animated: Bool) {

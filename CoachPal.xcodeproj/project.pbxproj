@@ -48,6 +48,7 @@
 		D0C0128B1D32EDE100488AE2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C012881D32EDE100488AE2 /* RealmSwift.framework */; };
 		D0C0128C1D32EDE100488AE2 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0C012881D32EDE100488AE2 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0C0128F1D342AE800488AE2 /* PlayerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */; };
+		D0C012911D355A2D00488AE2 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012901D355A2D00488AE2 /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		D0C012871D32EDE100488AE2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		D0C012881D32EDE100488AE2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerFormViewController.swift; sourceTree = "<group>"; };
+		D0C012901D355A2D00488AE2 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +257,7 @@
 				D0C011E71D31900300488AE2 /* TeamViewController.swift */,
 				D0C012371D31B0D700488AE2 /* RosterViewController.swift */,
 				D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */,
+				D0C012901D355A2D00488AE2 /* PlayerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				D0C012511D32B02E00488AE2 /* FormCheckCell.swift in Sources */,
 				D0C0124E1D32B02E00488AE2 /* FormTitleCell.swift in Sources */,
 				D0C012361D319C8C00488AE2 /* TeamCell.swift in Sources */,
+				D0C012911D355A2D00488AE2 /* PlayerViewController.swift in Sources */,
 				D0C0124F1D32B02E00488AE2 /* FormValueCell.swift in Sources */,
 				D0C012151D3190E300488AE2 /* Player.swift in Sources */,
 				D0C012551D32B02E00488AE2 /* FormSegmentedControlCell.swift in Sources */,
