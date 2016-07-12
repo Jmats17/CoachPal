@@ -17,22 +17,18 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var tableView : UITableView!
     var team : Team!
     let realm = try! Realm()
-    var player : Player?
-  
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         print(team)
-        print(player)
     }
-    
-
+ 
     
     @IBAction func refresh() {
         self.tableView.reloadData()
-        print(team)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -45,16 +41,25 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        if team.teamList.isEmpty {
+            return 0
+        }
+        else {
+            return team.teamList.count
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("RosterCell") as! RosterCell
         
         let player = team.teamList[indexPath.row]
-        
-        cell.player.text = player.name
-        cell.weight.text = "\(player.weight) lb"
+        if let playerName = player.name {
+            cell.player.text = playerName
+
+        }
+        if let playerWeight = player.weight {
+            cell.weight.text = "\(playerWeight) lb"
+        }
         
         return cell
     }

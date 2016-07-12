@@ -14,6 +14,7 @@ import RealmSwift
 class PlayerFormViewController : FormViewController {
     
     var player = Player()
+    
     var team : Team!
     var realm = try! Realm()
     
@@ -52,34 +53,64 @@ class PlayerFormViewController : FormViewController {
         
         let submitRow = FormRowDescriptor(tag: "Submit", type: .Button, title: "Submit")
         submitRow.configuration.button.didSelectClosure = { _ in
+           
             if let playerName = (nameRow.value as? String) {
                 self.player.name = playerName
+                
+            }
+            else {
+                
             }
             
-            if let playerAge = (ageRow.value as? Int) {
+            if let playerAge = (ageRow.value as? String) {
                 self.player.age = playerAge
             }
+            else {
+                self.player.age = "0"
+            }
             
-            if let playerWeight = (weightRow.value as? Double) {
+            if let playerWeight = (weightRow.value as? String) {
                 self.player.weight = playerWeight
+            }
+            else {
+                 self.player.weight = "0"
             }
             
             if let playerHeight = (heightRow.value as? String) {
                 self.player.height = playerHeight
             }
+            else {
+                self.player.height = "0'0"
+            }
             
-            if let playerWins = (winsRow.value as? Int) {
+            if let playerWins = (winsRow.value as? String) {
                 self.player.wins = playerWins
             }
-            
-            if let playerLosses = (lossesRow.value as? Int) {
-                self.player.losses = playerLosses
+            else {
+                self.player.wins = "0"
             }
             
-            self.team.teamList.append(self.player)
-           // print(self.team)
-            
-            self.dismissViewControllerAnimated(false, completion: nil)
+            if let playerLosses = (lossesRow.value as? String)  {
+                self.player.losses = playerLosses
+            }
+            else {
+                self.player.losses = "0"
+            }
+        
+            if nameRow.value != nil {
+                try! self.realm.write({
+                    
+                    self.team.teamList.append(self.player)
+                    print(self.player)
+                })
+                self.dismissViewControllerAnimated(false, completion: nil)
+
+            }
+            else {
+                self.dismissViewControllerAnimated(false, completion: nil)
+
+            }
+          
         }
         
         
@@ -89,12 +120,6 @@ class PlayerFormViewController : FormViewController {
         self.form = form
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationVC:RosterViewController = segue.destinationViewController as! RosterViewController
-        
-        //set properties on the destination view controller
-        destinationVC.team = team
-        destinationVC.player = player
-    }
+   
     
 }

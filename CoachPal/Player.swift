@@ -11,11 +11,11 @@ import UIKit
 import RealmSwift
 
 class Player : Object {
-    dynamic var name : String = ""
-    dynamic var age : Int = 0
-    dynamic var wins : Int = 0
-    dynamic var losses : Int = 0
-    var plays = List<Play>()
-    dynamic var height : String = "5'10"
-    dynamic var weight : Double = 0.0
+    dynamic var name : String? = nil
+    dynamic var age : String? = nil
+    dynamic var wins : String? = nil
+    dynamic var losses : String? = nil
+   // var plays = List<Play>()
+    dynamic var height : String? = nil
+    dynamic var weight : String? = nil
 }
