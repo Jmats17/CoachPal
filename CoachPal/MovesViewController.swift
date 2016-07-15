@@ -15,9 +15,8 @@ class MovesViewController : UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet var tableView: UITableView!
     var player : Player!
-    var play = Play()
     let realm = try! Realm()
-    var results : Results<Play>!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +32,12 @@ class MovesViewController : UIViewController, UITableViewDataSource, UITableView
     
     func readTasksAndUpdateUI(){
         
-        results = realm.objects(Play)
         self.tableView.setEditing(false, animated: true)
         self.tableView.reloadData()
     }
     
     @IBAction func addMove() {
+        var play = Play()
         var moveNameTextField : UITextField?
         let alertController = UIAlertController(title: "", message: "Add Play/Move" , preferredStyle: .Alert)
         alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
@@ -49,9 +48,9 @@ class MovesViewController : UIViewController, UITableViewDataSource, UITableView
         let okAction = UIAlertAction(title: "Add", style: .Default) { (action) in
             if moveNameTextField?.text != "" {
                 let assignedPlayer = self.player
-                self.play.playName = (moveNameTextField?.text)!
+                play.playName = (moveNameTextField?.text)!
                 try! self.realm.write({ () -> Void in
-                    assignedPlayer.plays.append(self.play)
+                    assignedPlayer.plays.append(play)
                     self.readTasksAndUpdateUI()
                     print(self.player.plays)
                 })
@@ -67,7 +66,7 @@ class MovesViewController : UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let play = self.results[indexPath.row]
+        let play = self.player.plays[indexPath.row]
         let cell = tableView.cellForRowAtIndexPath(indexPath) as! MoveCell
 
         let success = UITableViewRowAction(style: .Default, title: "Success") { action, index in
@@ -76,7 +75,7 @@ class MovesViewController : UIViewController, UITableViewDataSource, UITableView
                 play.totalPlaysSuccess += 1
                 play.successRate = (play.totalPlaysSuccess / play.totalPlaysDone)
                 self.readTasksAndUpdateUI()
-                print(self.play)
+                print(play)
             })
 
         }
@@ -103,11 +102,11 @@ class MovesViewController : UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if results == nil {
+        if player.plays.count == 0 {
             return 0
         }
         else {
-            return results.count
+            return player.plays.count
         }
     }
     
@@ -118,10 +117,10 @@ class MovesViewController : UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MoveCell") as! MoveCell
-        let play = self.results[indexPath.row]
+        let play = self.player.plays[indexPath.row]
         cell.moveLabel.text = play.playName
         cell.successLabel.text = "Success: \(String(format: "%.1f", (play.successRate * 100)))%"
-        print(results)
+        print(player.plays)
         return cell
     }
     

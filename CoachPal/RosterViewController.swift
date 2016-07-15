@@ -79,4 +79,34 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let deletedPlayer = team.teamList[indexPath.row]
+        
+        let delete = UITableViewRowAction(style: .Default, title: "Delete") { action, index in
+            try! self.realm.write({ () -> Void in
+                print(deletedPlayer)
+                print(deletedPlayer.plays)
+                self.realm.delete(deletedPlayer.plays)
+                self.realm.delete(deletedPlayer)
+                self.tableView.reloadData()
+                print(self.team.teamList)
+            })
+            
+        }
+        delete.backgroundColor = UIColor(red: 242/255, green: 124/255, blue: 124/255, alpha: 1.0)
+        
+        return [delete]
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    
+    
+    
 }

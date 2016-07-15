@@ -69,11 +69,13 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let team = self.results[indexPath.row]
         
         let delete = UITableViewRowAction(style: .Default, title: "Delete") { action, index in
             try! self.realm.write({ () -> Void in
-               self.realm.delete(self.team!)
+               self.realm.delete(team)
                 self.readTasksAndUpdateUI()
+                print(self.teams)
             })
             
         }

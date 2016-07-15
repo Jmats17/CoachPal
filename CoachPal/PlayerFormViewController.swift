@@ -218,9 +218,13 @@ class PlayerFormViewController : FormViewController, UIImagePickerControllerDele
            self.dismissViewControllerAnimated(true, completion: nil)
             
         }
-        
-        
         submitSection.rows.append(submitRow)
+
+        let cancelRow = FormRowDescriptor(tag: "Cancel", type: .Button, title: "Cancel")
+        cancelRow.configuration.button.didSelectClosure = { _ in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        submitSection.rows.append(cancelRow)
         
         form.sections = [basicInfoSection, picSection ,recordInfoSection, submitSection]
         self.form = form
@@ -353,11 +357,11 @@ class PlayerFormViewController : FormViewController, UIImagePickerControllerDele
                     self.team.teamList.append(self.player)
                     print(self.player)
                 })
-                self.dismissViewControllerAnimated(false, completion: nil)
+                self.dismissViewControllerAnimated(true, completion: nil)
 
             }
             else {
-                self.dismissViewControllerAnimated(false, completion: nil)
+                self.dismissViewControllerAnimated(true, completion: nil)
 
             }
           
@@ -366,6 +370,11 @@ class PlayerFormViewController : FormViewController, UIImagePickerControllerDele
         
         submitSection.rows.append(submitRow)
         
+        let cancelRow = FormRowDescriptor(tag: "Cancel", type: .Button, title: "Cancel")
+        cancelRow.configuration.button.didSelectClosure = { _ in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        submitSection.rows.append(cancelRow)
         form.sections = [basicInfoSection, picSection ,recordInfoSection, submitSection]
         self.form = form
     }

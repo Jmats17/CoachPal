@@ -15,5 +15,4 @@ class Team : Object {
    dynamic var teamName = ""
    var teamList = List<Player>()
     
-    
 }
