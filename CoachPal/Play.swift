@@ -10,5 +10,8 @@ import Foundation
 import UIKit
 import RealmSwift
 class Play : Object {
-    
+    dynamic var playName = ""
+    dynamic var totalPlaysDone = 0.0
+    dynamic var totalPlaysSuccess = 0.0
+    dynamic var successRate = 0.0
 }

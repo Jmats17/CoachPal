@@ -15,7 +15,7 @@ class Player : Object {
     dynamic var age : String? = nil
     dynamic var wins : String? = nil
     dynamic var losses : String? = nil
-   // var plays = List<Play>()
+    var plays = List<Play>()
     dynamic var height : String? = nil
     dynamic var weight : String? = nil
     dynamic var profilePicture : NSData? = nil

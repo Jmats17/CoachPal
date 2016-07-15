@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0B540101D389A720012E4D0 /* MoveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5400F1D389A720012E4D0 /* MoveCell.swift */; };
+		D0B540121D389DE00012E4D0 /* MovesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B540111D389DE00012E4D0 /* MovesViewController.swift */; };
 		D0C011E61D31900300488AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C011E51D31900300488AE2 /* AppDelegate.swift */; };
 		D0C011E81D31900300488AE2 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C011E71D31900300488AE2 /* TeamViewController.swift */; };
 		D0C011EB1D31900300488AE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0C011E91D31900300488AE2 /* Main.storyboard */; };
@@ -50,6 +52,7 @@
 		D0C0128F1D342AE800488AE2 /* PlayerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */; };
 		D0C012911D355A2D00488AE2 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012901D355A2D00488AE2 /* PlayerViewController.swift */; };
 		D0C012931D355D7D00488AE2 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012921D355D7D00488AE2 /* PlayerCell.swift */; };
+		D0D6E2E21D36A508001D95D8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6E2E11D36A508001D95D8 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D0B5400F1D389A720012E4D0 /* MoveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveCell.swift; sourceTree = "<group>"; };
+		D0B540111D389DE00012E4D0 /* MovesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesViewController.swift; sourceTree = "<group>"; };
 		D0C011E21D31900300488AE2 /* CoachPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C011E51D31900300488AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0C011E71D31900300488AE2 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +146,7 @@
 		D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerFormViewController.swift; sourceTree = "<group>"; };
 		D0C012901D355A2D00488AE2 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		D0C012921D355D7D00488AE2 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		D0D6E2E11D36A508001D95D8 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +266,8 @@
 				D0C011E71D31900300488AE2 /* TeamViewController.swift */,
 				D0C012371D31B0D700488AE2 /* RosterViewController.swift */,
 				D0C012901D355A2D00488AE2 /* PlayerViewController.swift */,
+				D0D6E2E11D36A508001D95D8 /* TabBarViewController.swift */,
+				D0B540111D389DE00012E4D0 /* MovesViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -270,6 +278,7 @@
 				D0C012351D319C8C00488AE2 /* TeamCell.swift */,
 				D0C012391D31B40800488AE2 /* RosterCell.swift */,
 				D0C012921D355D7D00488AE2 /* PlayerCell.swift */,
+				D0B5400F1D389A720012E4D0 /* MoveCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -479,8 +488,11 @@
 				D0C0126C1D32D20F00488AE2 /* Data.swift in Sources */,
 				D0C012671D32B03F00488AE2 /* FormRowDescriptor.swift in Sources */,
 				D0C012691D32B03F00488AE2 /* FormErrorType.swift in Sources */,
+				D0B540101D389A720012E4D0 /* MoveCell.swift in Sources */,
 				D0C012611D32B03600488AE2 /* FormViewController.swift in Sources */,
+				D0B540121D389DE00012E4D0 /* MovesViewController.swift in Sources */,
 				D0C012511D32B02E00488AE2 /* FormCheckCell.swift in Sources */,
+				D0D6E2E21D36A508001D95D8 /* TabBarViewController.swift in Sources */,
 				D0C0124E1D32B02E00488AE2 /* FormTitleCell.swift in Sources */,
 				D0C012361D319C8C00488AE2 /* TeamCell.swift in Sources */,
 				D0C012911D355A2D00488AE2 /* PlayerViewController.swift in Sources */,

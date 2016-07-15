@@ -77,10 +77,16 @@ class PlayerViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadPlayerInfo()
         profileImage.layer.cornerRadius =  profileImage.frame.size.width / 2
         profileImage.clipsToBounds = true
         
+    }
+    
+   
+    
+    override func viewWillAppear(animated: Bool) {
+        loadPlayerInfo()
+
     }
   
     @IBAction func edit() {

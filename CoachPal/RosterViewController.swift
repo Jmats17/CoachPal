@@ -59,7 +59,7 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "rostertoplayer") {
-            let playerViewController = segue.destinationViewController as! PlayerViewController
+            let playerViewController = segue.destinationViewController as! TabBarViewController
             playerViewController.player = player
         }
     }

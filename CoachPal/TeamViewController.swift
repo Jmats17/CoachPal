@@ -29,6 +29,7 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
         alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
             teamNameTextField = textField
             teamNameTextField?.placeholder = "South Golden Hawks"
+            teamNameTextField?.autocapitalizationType = .Words
         }
         let okAction = UIAlertAction(title: "Add", style: .Default) { (action) in
             if teamNameTextField?.text != "" {
@@ -67,6 +68,28 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .Default, title: "Delete") { action, index in
+            try! self.realm.write({ () -> Void in
+               self.realm.delete(self.team!)
+                self.readTasksAndUpdateUI()
+            })
+            
+        }
+        delete.backgroundColor = UIColor(red: 242/255, green: 124/255, blue: 124/255, alpha: 1.0)
+        
+        return [delete]
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+
+    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
