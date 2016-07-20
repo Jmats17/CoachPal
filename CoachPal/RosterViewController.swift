@@ -83,13 +83,19 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
 
         }
         let playerWeight = player.weight ?? unknownValue
-        
+        if let playerProfPic = player.profilePicture {
+            let image = UIImage(data: playerProfPic)
+            cell.playerPic.image = image
+        }
+        else {
+            cell.playerPic.image = nil
+        }
         let playerHeight = player.height ?? unknownValue
         let playerWins = player.wins ?? unknownValue
         let playerLosses = player.losses ?? unknownValue
         
         cell.weightHeightRecord.text = "Wins: \(playerWins) - Losses: \(playerLosses)"
-        + "\nWeight: \(playerWeight) / Height: \(playerHeight)"
+        + "\nWeight: \(playerWeight)lb / Height: \(playerHeight)"
         
         
         return cell

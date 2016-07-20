@@ -12,5 +12,5 @@ import UIKit
 class RosterCell : UITableViewCell {
     @IBOutlet var player : UILabel!
     @IBOutlet var weightHeightRecord : UILabel!
-
+    @IBOutlet var playerPic : UIImageView!
 }
