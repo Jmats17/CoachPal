@@ -92,6 +92,7 @@ class PlayerViewController : UIViewController, UITableViewDelegate,UITableViewDa
         navBar.translucent = true
         tableView.delegate = self
         tableView.dataSource = self
+        navBar.topItem?.title = player.name!
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -126,7 +127,7 @@ class PlayerViewController : UIViewController, UITableViewDelegate,UITableViewDa
             })
             
         }
-        success.backgroundColor = UIColor(red: 0/255, green: 204/255, blue: 102/255, alpha: 1.0)
+        success.backgroundColor = UIColor(red: 126/255, green: 211/255, blue: 33/255, alpha: 1.0)
         
         let fail = UITableViewRowAction(style: .Default, title: "Fail") { action, index in
             try! self.realm.write({  () -> Void in
@@ -136,7 +137,7 @@ class PlayerViewController : UIViewController, UITableViewDelegate,UITableViewDa
             })
             
         }
-        fail.backgroundColor = UIColor(red: 242/255, green: 124/255, blue: 124/255, alpha: 1.0)
+        fail.backgroundColor = UIColor(red: 208/255, green: 2/255, blue: 27/255, alpha: 1.0)
         
         return [success, fail]
     }
