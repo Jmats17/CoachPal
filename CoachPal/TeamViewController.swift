@@ -85,7 +85,7 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
                 })
                 
             }
-            delete.backgroundColor = UIColor(red: 242/255, green: 124/255, blue: 124/255, alpha: 1.0)
+            delete.backgroundColor = UIColor(red: 41/255, green: 128/255, blue: 185/255, alpha: 1.0)
             
             return [delete]
         

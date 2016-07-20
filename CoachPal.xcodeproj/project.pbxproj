@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D0B540101D389A720012E4D0 /* MoveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5400F1D389A720012E4D0 /* MoveCell.swift */; };
-		D0B540121D389DE00012E4D0 /* MovesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B540111D389DE00012E4D0 /* MovesViewController.swift */; };
 		D0B540161D3CA29B0012E4D0 /* justin-013.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0B540151D3CA29B0012E4D0 /* justin-013.jpg */; };
 		D0C011E61D31900300488AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C011E51D31900300488AE2 /* AppDelegate.swift */; };
 		D0C011E81D31900300488AE2 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C011E71D31900300488AE2 /* TeamViewController.swift */; };
@@ -53,7 +52,12 @@
 		D0C0128F1D342AE800488AE2 /* PlayerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */; };
 		D0C012911D355A2D00488AE2 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012901D355A2D00488AE2 /* PlayerViewController.swift */; };
 		D0C012931D355D7D00488AE2 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012921D355D7D00488AE2 /* PlayerCell.swift */; };
-		D0D6E2E21D36A508001D95D8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6E2E11D36A508001D95D8 /* TabBarViewController.swift */; };
+		D0EAD1D81D3FFA0600D74682 /* Group.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EAD1D51D3FFA0600D74682 /* Group.png */; };
+		D0EAD1D91D3FFA0600D74682 /* Group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EAD1D61D3FFA0600D74682 /* Group@2x.png */; };
+		D0EAD1DA1D3FFA0600D74682 /* Group@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EAD1D71D3FFA0600D74682 /* Group@3x.png */; };
+		D0EAD1E41D400E6800D74682 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EAD1E11D400E6800D74682 /* plus.png */; };
+		D0EAD1E51D400E6800D74682 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EAD1E21D400E6800D74682 /* plus@2x.png */; };
+		D0EAD1E61D400E6800D74682 /* plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EAD1E31D400E6800D74682 /* plus@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +94,6 @@
 
 /* Begin PBXFileReference section */
 		D0B5400F1D389A720012E4D0 /* MoveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveCell.swift; sourceTree = "<group>"; };
-		D0B540111D389DE00012E4D0 /* MovesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesViewController.swift; sourceTree = "<group>"; };
 		D0B540151D3CA29B0012E4D0 /* justin-013.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "justin-013.jpg"; sourceTree = "<group>"; };
 		D0C011E21D31900300488AE2 /* CoachPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C011E51D31900300488AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,7 +151,12 @@
 		D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerFormViewController.swift; sourceTree = "<group>"; };
 		D0C012901D355A2D00488AE2 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		D0C012921D355D7D00488AE2 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
-		D0D6E2E11D36A508001D95D8 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		D0EAD1D51D3FFA0600D74682 /* Group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Group.png; sourceTree = "<group>"; };
+		D0EAD1D61D3FFA0600D74682 /* Group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Group@2x.png"; sourceTree = "<group>"; };
+		D0EAD1D71D3FFA0600D74682 /* Group@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Group@3x.png"; sourceTree = "<group>"; };
+		D0EAD1E11D400E6800D74682 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		D0EAD1E21D400E6800D74682 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
+		D0EAD1E31D400E6800D74682 /* plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +256,12 @@
 		D0C0121A1D31945300488AE2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D0EAD1E11D400E6800D74682 /* plus.png */,
+				D0EAD1E21D400E6800D74682 /* plus@2x.png */,
+				D0EAD1E31D400E6800D74682 /* plus@3x.png */,
+				D0EAD1D51D3FFA0600D74682 /* Group.png */,
+				D0EAD1D61D3FFA0600D74682 /* Group@2x.png */,
+				D0EAD1D71D3FFA0600D74682 /* Group@3x.png */,
 				D0B540151D3CA29B0012E4D0 /* justin-013.jpg */,
 				D0C0122B1D3197FF00488AE2 /* SFSportsNight.ttf */,
 				D0C0122C1D3197FF00488AE2 /* SFSportsNightAlternate.ttf */,
@@ -269,8 +283,6 @@
 				D0C011E71D31900300488AE2 /* TeamViewController.swift */,
 				D0C012371D31B0D700488AE2 /* RosterViewController.swift */,
 				D0C012901D355A2D00488AE2 /* PlayerViewController.swift */,
-				D0D6E2E11D36A508001D95D8 /* TabBarViewController.swift */,
-				D0B540111D389DE00012E4D0 /* MovesViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -432,10 +444,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0EAD1D91D3FFA0600D74682 /* Group@2x.png in Resources */,
+				D0EAD1D81D3FFA0600D74682 /* Group.png in Resources */,
 				D0C011F01D31900300488AE2 /* LaunchScreen.storyboard in Resources */,
 				D0C011ED1D31900300488AE2 /* Assets.xcassets in Resources */,
 				D0C011EB1D31900300488AE2 /* Main.storyboard in Resources */,
+				D0EAD1E51D400E6800D74682 /* plus@2x.png in Resources */,
 				D0B540161D3CA29B0012E4D0 /* justin-013.jpg in Resources */,
+				D0EAD1DA1D3FFA0600D74682 /* Group@3x.png in Resources */,
+				D0EAD1E41D400E6800D74682 /* plus.png in Resources */,
+				D0EAD1E61D400E6800D74682 /* plus@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,9 +512,7 @@
 				D0C012691D32B03F00488AE2 /* FormErrorType.swift in Sources */,
 				D0B540101D389A720012E4D0 /* MoveCell.swift in Sources */,
 				D0C012611D32B03600488AE2 /* FormViewController.swift in Sources */,
-				D0B540121D389DE00012E4D0 /* MovesViewController.swift in Sources */,
 				D0C012511D32B02E00488AE2 /* FormCheckCell.swift in Sources */,
-				D0D6E2E21D36A508001D95D8 /* TabBarViewController.swift in Sources */,
 				D0C0124E1D32B02E00488AE2 /* FormTitleCell.swift in Sources */,
 				D0C012361D319C8C00488AE2 /* TeamCell.swift in Sources */,
 				D0C012911D355A2D00488AE2 /* PlayerViewController.swift in Sources */,
