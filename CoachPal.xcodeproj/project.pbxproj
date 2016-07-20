@@ -58,6 +58,9 @@
 		D0EAD1E41D400E6800D74682 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EAD1E11D400E6800D74682 /* plus.png */; };
 		D0EAD1E51D400E6800D74682 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EAD1E21D400E6800D74682 /* plus@2x.png */; };
 		D0EAD1E61D400E6800D74682 /* plus@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EAD1E31D400E6800D74682 /* plus@3x.png */; };
+		D0EAD1EA1D4042E800D74682 /* Group1.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EAD1E71D4042E800D74682 /* Group1.png */; };
+		D0EAD1EB1D4042E800D74682 /* Group1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EAD1E81D4042E800D74682 /* Group1@2x.png */; };
+		D0EAD1EC1D4042E800D74682 /* Group1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EAD1E91D4042E800D74682 /* Group1@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +160,9 @@
 		D0EAD1E11D400E6800D74682 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		D0EAD1E21D400E6800D74682 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
 		D0EAD1E31D400E6800D74682 /* plus@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@3x.png"; sourceTree = "<group>"; };
+		D0EAD1E71D4042E800D74682 /* Group1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Group1.png; sourceTree = "<group>"; };
+		D0EAD1E81D4042E800D74682 /* Group1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Group1@2x.png"; sourceTree = "<group>"; };
+		D0EAD1E91D4042E800D74682 /* Group1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Group1@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +262,9 @@
 		D0C0121A1D31945300488AE2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D0EAD1E71D4042E800D74682 /* Group1.png */,
+				D0EAD1E81D4042E800D74682 /* Group1@2x.png */,
+				D0EAD1E91D4042E800D74682 /* Group1@3x.png */,
 				D0EAD1E11D400E6800D74682 /* plus.png */,
 				D0EAD1E21D400E6800D74682 /* plus@2x.png */,
 				D0EAD1E31D400E6800D74682 /* plus@3x.png */,
@@ -446,9 +455,12 @@
 			files = (
 				D0EAD1D91D3FFA0600D74682 /* Group@2x.png in Resources */,
 				D0EAD1D81D3FFA0600D74682 /* Group.png in Resources */,
+				D0EAD1EC1D4042E800D74682 /* Group1@3x.png in Resources */,
 				D0C011F01D31900300488AE2 /* LaunchScreen.storyboard in Resources */,
 				D0C011ED1D31900300488AE2 /* Assets.xcassets in Resources */,
+				D0EAD1EB1D4042E800D74682 /* Group1@2x.png in Resources */,
 				D0C011EB1D31900300488AE2 /* Main.storyboard in Resources */,
+				D0EAD1EA1D4042E800D74682 /* Group1.png in Resources */,
 				D0EAD1E51D400E6800D74682 /* plus@2x.png in Resources */,
 				D0B540161D3CA29B0012E4D0 /* justin-013.jpg in Resources */,
 				D0EAD1DA1D3FFA0600D74682 /* Group@3x.png in Resources */,
