@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D0B540101D389A720012E4D0 /* MoveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5400F1D389A720012E4D0 /* MoveCell.swift */; };
 		D0B540121D389DE00012E4D0 /* MovesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B540111D389DE00012E4D0 /* MovesViewController.swift */; };
+		D0B540161D3CA29B0012E4D0 /* justin-013.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0B540151D3CA29B0012E4D0 /* justin-013.jpg */; };
 		D0C011E61D31900300488AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C011E51D31900300488AE2 /* AppDelegate.swift */; };
 		D0C011E81D31900300488AE2 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C011E71D31900300488AE2 /* TeamViewController.swift */; };
 		D0C011EB1D31900300488AE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0C011E91D31900300488AE2 /* Main.storyboard */; };
@@ -90,6 +91,7 @@
 /* Begin PBXFileReference section */
 		D0B5400F1D389A720012E4D0 /* MoveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveCell.swift; sourceTree = "<group>"; };
 		D0B540111D389DE00012E4D0 /* MovesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovesViewController.swift; sourceTree = "<group>"; };
+		D0B540151D3CA29B0012E4D0 /* justin-013.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "justin-013.jpg"; sourceTree = "<group>"; };
 		D0C011E21D31900300488AE2 /* CoachPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C011E51D31900300488AE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0C011E71D31900300488AE2 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 		D0C0121A1D31945300488AE2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D0B540151D3CA29B0012E4D0 /* justin-013.jpg */,
 				D0C0122B1D3197FF00488AE2 /* SFSportsNight.ttf */,
 				D0C0122C1D3197FF00488AE2 /* SFSportsNightAlternate.ttf */,
 				D0C0122D1D3197FF00488AE2 /* SFSportsNightAltUpright.ttf */,
@@ -432,6 +435,7 @@
 				D0C011F01D31900300488AE2 /* LaunchScreen.storyboard in Resources */,
 				D0C011ED1D31900300488AE2 /* Assets.xcassets in Resources */,
 				D0C011EB1D31900300488AE2 /* Main.storyboard in Resources */,
+				D0B540161D3CA29B0012E4D0 /* justin-013.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

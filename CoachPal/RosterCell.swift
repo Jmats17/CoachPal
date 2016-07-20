@@ -11,6 +11,6 @@ import UIKit
 
 class RosterCell : UITableViewCell {
     @IBOutlet var player : UILabel!
-    @IBOutlet var weight : UILabel!
-    
+    @IBOutlet var weightHeightRecord : UILabel!
+
 }

@@ -9,18 +9,22 @@
 import UIKit
 import RealmSwift
 import Realm
+
+
 class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet var tableView : UITableView!
+    @IBOutlet var tableViewTeams : UITableView!
     let realm = try! Realm()
     var team : Team? = nil
     var teams = [Team]()
     var results : Results<Team>!
+
     func readTasksAndUpdateUI(){
         
         results = realm.objects(Team)
-        self.tableView.setEditing(false, animated: true)
-        self.tableView.reloadData()
+        self.tableViewTeams.setEditing(false, animated: true)
+        self.tableViewTeams.reloadData()
+
     }
 
     @IBAction func addTeam() {
@@ -53,8 +57,9 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableViewTeams.delegate = self
+        tableViewTeams.dataSource = self
+     
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,25 +74,47 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let team = self.results[indexPath.row]
         
-        let delete = UITableViewRowAction(style: .Default, title: "Delete") { action, index in
-            try! self.realm.write({ () -> Void in
-               self.realm.delete(team)
-                self.readTasksAndUpdateUI()
-                print(self.teams)
-            })
+            let team = self.results[indexPath.row]
             
-        }
-        delete.backgroundColor = UIColor(red: 242/255, green: 124/255, blue: 124/255, alpha: 1.0)
+            let delete = UITableViewRowAction(style: .Default, title: "Delete") { action, index in
+                try! self.realm.write({ () -> Void in
+                    self.realm.delete(team)
+                    self.readTasksAndUpdateUI()
+                    print(self.teams)
+                })
+                
+            }
+            delete.backgroundColor = UIColor(red: 242/255, green: 124/255, blue: 124/255, alpha: 1.0)
+            
+            return [delete]
         
-        return [delete]
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+            return 1
+
+        
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+            return "Teams"
+            
+        
+    }
+    
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
+        header.contentView.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1.0)
+        header.textLabel!.textColor = UIColor(red: 171/255, green: 171/255, blue: 171/255, alpha: 1.0)
+        header.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 14.0)
+    }
+  
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
 
@@ -95,12 +122,12 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-        let selectedTeam = results[indexPath.row]
-        team = selectedTeam
-        
-        self.performSegueWithIdentifier("teamtoroster", sender: self)
-        
-        
+            let selectedTeam = results[indexPath.row]
+            team = selectedTeam
+            
+            self.performSegueWithIdentifier("teamtoroster", sender: self)
+            
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -115,23 +142,26 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if results.count == 0 {
-            return 0
-        }
-        else {
-            return results.count
-        }
+        
+            if results.count == 0 {
+                return 0
+            }
+            else {
+                return results.count
+            }
+       
+        
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-       
-        let cell = tableView.dequeueReusableCellWithIdentifier("TeamCell") as! TeamCell
-        let team = results[indexPath.row]
-        
-        cell.teamName.text = team.teamName
+            let cell = tableViewTeams.dequeueReusableCellWithIdentifier("TeamCell") as! TeamCell
+            let team = results[indexPath.row]
             
-        return cell
-        
+            cell.teamName.text = team.teamName
+            cell.teamSize.text = "\(team.teamList.count) wrestlers"
+            return cell
+
+       
     }
 }
 

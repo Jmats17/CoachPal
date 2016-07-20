@@ -11,6 +11,6 @@ import UIKit
 
 class TeamCell : UITableViewCell {
     @IBOutlet var teamName : UILabel!
-    
+    @IBOutlet var teamSize : UILabel!
    
 }
