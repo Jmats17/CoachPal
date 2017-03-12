@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		028FAF1C863B400F0387E41B /* Pods_CoachPal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E92671B540E38CE6672A51 /* Pods_CoachPal.framework */; };
 		D0B540101D389A720012E4D0 /* MoveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B5400F1D389A720012E4D0 /* MoveCell.swift */; };
 		D0B540161D3CA29B0012E4D0 /* justin-013.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0B540151D3CA29B0012E4D0 /* justin-013.jpg */; };
 		D0C011E61D31900300488AE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C011E51D31900300488AE2 /* AppDelegate.swift */; };
@@ -22,33 +23,7 @@
 		D0C012361D319C8C00488AE2 /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012351D319C8C00488AE2 /* TeamCell.swift */; };
 		D0C012381D31B0D700488AE2 /* RosterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012371D31B0D700488AE2 /* RosterViewController.swift */; };
 		D0C0123A1D31B40800488AE2 /* RosterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012391D31B40800488AE2 /* RosterCell.swift */; };
-		D0C0124D1D32B02E00488AE2 /* FormBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0123E1D32B02E00488AE2 /* FormBaseCell.swift */; };
-		D0C0124E1D32B02E00488AE2 /* FormTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0123F1D32B02E00488AE2 /* FormTitleCell.swift */; };
-		D0C0124F1D32B02E00488AE2 /* FormValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012401D32B02E00488AE2 /* FormValueCell.swift */; };
-		D0C012501D32B02E00488AE2 /* FormButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012411D32B02E00488AE2 /* FormButtonCell.swift */; };
-		D0C012511D32B02E00488AE2 /* FormCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012421D32B02E00488AE2 /* FormCheckCell.swift */; };
-		D0C012521D32B02E00488AE2 /* FormDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012431D32B02E00488AE2 /* FormDateCell.swift */; };
-		D0C012531D32B02E00488AE2 /* FormLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012441D32B02E00488AE2 /* FormLabelCell.swift */; };
-		D0C012541D32B02E00488AE2 /* FormPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012451D32B02E00488AE2 /* FormPickerCell.swift */; };
-		D0C012551D32B02E00488AE2 /* FormSegmentedControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012461D32B02E00488AE2 /* FormSegmentedControlCell.swift */; };
-		D0C012561D32B02E00488AE2 /* FormSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012471D32B02E00488AE2 /* FormSelectorCell.swift */; };
-		D0C012571D32B02E00488AE2 /* FormSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012481D32B02E00488AE2 /* FormSliderCell.swift */; };
-		D0C012581D32B02E00488AE2 /* FormStepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012491D32B02E00488AE2 /* FormStepperCell.swift */; };
-		D0C012591D32B02E00488AE2 /* FormSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0124A1D32B02E00488AE2 /* FormSwitchCell.swift */; };
-		D0C0125A1D32B02E00488AE2 /* FormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0124B1D32B02E00488AE2 /* FormTextFieldCell.swift */; };
-		D0C0125B1D32B02E00488AE2 /* FormTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0124C1D32B02E00488AE2 /* FormTextViewCell.swift */; };
-		D0C0125F1D32B03600488AE2 /* FormOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0125C1D32B03600488AE2 /* FormOptionsViewController.swift */; };
-		D0C012601D32B03600488AE2 /* FormSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0125D1D32B03600488AE2 /* FormSelector.swift */; };
-		D0C012611D32B03600488AE2 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0125E1D32B03600488AE2 /* FormViewController.swift */; };
-		D0C012661D32B03F00488AE2 /* FormDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012621D32B03F00488AE2 /* FormDescriptor.swift */; };
-		D0C012671D32B03F00488AE2 /* FormRowDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012631D32B03F00488AE2 /* FormRowDescriptor.swift */; };
-		D0C012681D32B03F00488AE2 /* FormSectionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012641D32B03F00488AE2 /* FormSectionDescriptor.swift */; };
-		D0C012691D32B03F00488AE2 /* FormErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012651D32B03F00488AE2 /* FormErrorType.swift */; };
 		D0C0126C1D32D20F00488AE2 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0126B1D32D20F00488AE2 /* Data.swift */; };
-		D0C012891D32EDE100488AE2 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C012871D32EDE100488AE2 /* Realm.framework */; };
-		D0C0128A1D32EDE100488AE2 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0C012871D32EDE100488AE2 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D0C0128B1D32EDE100488AE2 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C012881D32EDE100488AE2 /* RealmSwift.framework */; };
-		D0C0128C1D32EDE100488AE2 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0C012881D32EDE100488AE2 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0C0128F1D342AE800488AE2 /* PlayerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */; };
 		D0C012911D355A2D00488AE2 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012901D355A2D00488AE2 /* PlayerViewController.swift */; };
 		D0C012931D355D7D00488AE2 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C012921D355D7D00488AE2 /* PlayerCell.swift */; };
@@ -87,8 +62,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D0C0128C1D32EDE100488AE2 /* RealmSwift.framework in Embed Frameworks */,
-				D0C0128A1D32EDE100488AE2 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +69,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E8B069F6539D2F2187D1CE9 /* Pods-CoachPal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoachPal.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoachPal/Pods-CoachPal.release.xcconfig"; sourceTree = "<group>"; };
+		53A9FBBE85723BEEBF593B85 /* Pods_CoachPalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoachPalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57E92671B540E38CE6672A51 /* Pods_CoachPal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoachPal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		685512B3F0B2D8232A968C38 /* Pods_CoachPalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoachPalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B5400F1D389A720012E4D0 /* MoveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveCell.swift; sourceTree = "<group>"; };
 		D0B540151D3CA29B0012E4D0 /* justin-013.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "justin-013.jpg"; sourceTree = "<group>"; };
 		D0C011E21D31900300488AE2 /* CoachPal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachPal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,32 +102,7 @@
 		D0C012351D319C8C00488AE2 /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
 		D0C012371D31B0D700488AE2 /* RosterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RosterViewController.swift; sourceTree = "<group>"; };
 		D0C012391D31B40800488AE2 /* RosterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RosterCell.swift; sourceTree = "<group>"; };
-		D0C0123E1D32B02E00488AE2 /* FormBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBaseCell.swift; sourceTree = "<group>"; };
-		D0C0123F1D32B02E00488AE2 /* FormTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTitleCell.swift; sourceTree = "<group>"; };
-		D0C012401D32B02E00488AE2 /* FormValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValueCell.swift; sourceTree = "<group>"; };
-		D0C012411D32B02E00488AE2 /* FormButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormButtonCell.swift; sourceTree = "<group>"; };
-		D0C012421D32B02E00488AE2 /* FormCheckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCheckCell.swift; sourceTree = "<group>"; };
-		D0C012431D32B02E00488AE2 /* FormDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormDateCell.swift; sourceTree = "<group>"; };
-		D0C012441D32B02E00488AE2 /* FormLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormLabelCell.swift; sourceTree = "<group>"; };
-		D0C012451D32B02E00488AE2 /* FormPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormPickerCell.swift; sourceTree = "<group>"; };
-		D0C012461D32B02E00488AE2 /* FormSegmentedControlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSegmentedControlCell.swift; sourceTree = "<group>"; };
-		D0C012471D32B02E00488AE2 /* FormSelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSelectorCell.swift; sourceTree = "<group>"; };
-		D0C012481D32B02E00488AE2 /* FormSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSliderCell.swift; sourceTree = "<group>"; };
-		D0C012491D32B02E00488AE2 /* FormStepperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormStepperCell.swift; sourceTree = "<group>"; };
-		D0C0124A1D32B02E00488AE2 /* FormSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSwitchCell.swift; sourceTree = "<group>"; };
-		D0C0124B1D32B02E00488AE2 /* FormTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldCell.swift; sourceTree = "<group>"; };
-		D0C0124C1D32B02E00488AE2 /* FormTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextViewCell.swift; sourceTree = "<group>"; };
-		D0C0125C1D32B03600488AE2 /* FormOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormOptionsViewController.swift; sourceTree = "<group>"; };
-		D0C0125D1D32B03600488AE2 /* FormSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSelector.swift; sourceTree = "<group>"; };
-		D0C0125E1D32B03600488AE2 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
-		D0C012621D32B03F00488AE2 /* FormDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormDescriptor.swift; sourceTree = "<group>"; };
-		D0C012631D32B03F00488AE2 /* FormRowDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRowDescriptor.swift; sourceTree = "<group>"; };
-		D0C012641D32B03F00488AE2 /* FormSectionDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSectionDescriptor.swift; sourceTree = "<group>"; };
-		D0C012651D32B03F00488AE2 /* FormErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormErrorType.swift; sourceTree = "<group>"; };
-		D0C0126A1D32B04500488AE2 /* SwiftForms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftForms.h; sourceTree = "<group>"; };
 		D0C0126B1D32D20F00488AE2 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		D0C012871D32EDE100488AE2 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		D0C012881D32EDE100488AE2 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		D0C0128E1D342AE800488AE2 /* PlayerFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerFormViewController.swift; sourceTree = "<group>"; };
 		D0C012901D355A2D00488AE2 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		D0C012921D355D7D00488AE2 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
@@ -163,6 +115,7 @@
 		D0EAD1E71D4042E800D74682 /* Group1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Group1.png; sourceTree = "<group>"; };
 		D0EAD1E81D4042E800D74682 /* Group1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Group1@2x.png"; sourceTree = "<group>"; };
 		D0EAD1E91D4042E800D74682 /* Group1@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Group1@3x.png"; sourceTree = "<group>"; };
+		EF3B1B2E8274B4B9B9184B1A /* Pods-CoachPal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoachPal.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoachPal/Pods-CoachPal.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0C0128B1D32EDE100488AE2 /* RealmSwift.framework in Frameworks */,
-				D0C012891D32EDE100488AE2 /* Realm.framework in Frameworks */,
+				028FAF1C863B400F0387E41B /* Pods_CoachPal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +144,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C6589C5B32530AA2A055B41 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EF3B1B2E8274B4B9B9184B1A /* Pods-CoachPal.debug.xcconfig */,
+				1E8B069F6539D2F2187D1CE9 /* Pods-CoachPal.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D0C011D91D31900300488AE2 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +162,7 @@
 				D0C011F91D31900300488AE2 /* CoachPalTests */,
 				D0C012041D31900300488AE2 /* CoachPalUITests */,
 				D0C011E31D31900300488AE2 /* Products */,
+				8C6589C5B32530AA2A055B41 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,7 +181,6 @@
 			children = (
 				D0C011E51D31900300488AE2 /* AppDelegate.swift */,
 				D0C012131D31908500488AE2 /* Models */,
-				D0C0123D1D32B01C00488AE2 /* Swiftform */,
 				D0C012341D319C7300488AE2 /* Cells */,
 				D0C012331D319C5700488AE2 /* ViewControllers */,
 				D0C011E91D31900300488AE2 /* Main.storyboard */,
@@ -307,41 +268,12 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		D0C0123D1D32B01C00488AE2 /* Swiftform */ = {
-			isa = PBXGroup;
-			children = (
-				D0C0123E1D32B02E00488AE2 /* FormBaseCell.swift */,
-				D0C0123F1D32B02E00488AE2 /* FormTitleCell.swift */,
-				D0C012401D32B02E00488AE2 /* FormValueCell.swift */,
-				D0C012411D32B02E00488AE2 /* FormButtonCell.swift */,
-				D0C012421D32B02E00488AE2 /* FormCheckCell.swift */,
-				D0C012431D32B02E00488AE2 /* FormDateCell.swift */,
-				D0C012441D32B02E00488AE2 /* FormLabelCell.swift */,
-				D0C012451D32B02E00488AE2 /* FormPickerCell.swift */,
-				D0C012461D32B02E00488AE2 /* FormSegmentedControlCell.swift */,
-				D0C012471D32B02E00488AE2 /* FormSelectorCell.swift */,
-				D0C012481D32B02E00488AE2 /* FormSliderCell.swift */,
-				D0C012491D32B02E00488AE2 /* FormStepperCell.swift */,
-				D0C0124A1D32B02E00488AE2 /* FormSwitchCell.swift */,
-				D0C0124B1D32B02E00488AE2 /* FormTextFieldCell.swift */,
-				D0C0124C1D32B02E00488AE2 /* FormTextViewCell.swift */,
-				D0C0125C1D32B03600488AE2 /* FormOptionsViewController.swift */,
-				D0C0125D1D32B03600488AE2 /* FormSelector.swift */,
-				D0C0125E1D32B03600488AE2 /* FormViewController.swift */,
-				D0C012621D32B03F00488AE2 /* FormDescriptor.swift */,
-				D0C012631D32B03F00488AE2 /* FormRowDescriptor.swift */,
-				D0C012641D32B03F00488AE2 /* FormSectionDescriptor.swift */,
-				D0C012651D32B03F00488AE2 /* FormErrorType.swift */,
-				D0C0126A1D32B04500488AE2 /* SwiftForms.h */,
-			);
-			name = Swiftform;
-			sourceTree = "<group>";
-		};
 		D0C0126D1D32EB6100488AE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0C012871D32EDE100488AE2 /* Realm.framework */,
-				D0C012881D32EDE100488AE2 /* RealmSwift.framework */,
+				57E92671B540E38CE6672A51 /* Pods_CoachPal.framework */,
+				53A9FBBE85723BEEBF593B85 /* Pods_CoachPalTests.framework */,
+				685512B3F0B2D8232A968C38 /* Pods_CoachPalUITests.framework */,
 			);
 			name = Frameworks;
 			path = CoachPal;
@@ -354,11 +286,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0C0120A1D31900300488AE2 /* Build configuration list for PBXNativeTarget "CoachPal" */;
 			buildPhases = (
+				A25171B26216F4D9C89D258F /* [CP] Check Pods Manifest.lock */,
 				D0C011DE1D31900300488AE2 /* Sources */,
 				D0C011DF1D31900300488AE2 /* Frameworks */,
 				D0C011E01D31900300488AE2 /* Resources */,
 				D0C012861D32EDAD00488AE2 /* Embed Frameworks */,
 				D0C0128D1D32EE7400488AE2 /* ShellScript */,
+				24D130602EA1DBF076F261EC /* [CP] Embed Pods Frameworks */,
+				E95B49634B5F3F9897CC84CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -412,18 +347,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Justin Matsnev";
 				TargetAttributes = {
 					D0C011E11D31900300488AE2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 96QE7H4LVL;
+						LastSwiftMigration = 0820;
 					};
 					D0C011F51D31900300488AE2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = D0C011E11D31900300488AE2;
 					};
 					D0C012001D31900300488AE2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = D0C011E11D31900300488AE2;
 					};
 				};
@@ -486,6 +425,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		24D130602EA1DBF076F261EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoachPal/Pods-CoachPal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A25171B26216F4D9C89D258F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		D0C0128D1D32EE7400488AE2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -497,7 +466,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"\n";
+			shellScript = "";
+		};
+		E95B49634B5F3F9897CC84CD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoachPal/Pods-CoachPal-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -507,40 +491,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0C012171D3190EC00488AE2 /* Team.swift in Sources */,
-				D0C0125F1D32B03600488AE2 /* FormOptionsViewController.swift in Sources */,
-				D0C012661D32B03F00488AE2 /* FormDescriptor.swift in Sources */,
-				D0C0125A1D32B02E00488AE2 /* FormTextFieldCell.swift in Sources */,
-				D0C012541D32B02E00488AE2 /* FormPickerCell.swift in Sources */,
-				D0C0124D1D32B02E00488AE2 /* FormBaseCell.swift in Sources */,
-				D0C0125B1D32B02E00488AE2 /* FormTextViewCell.swift in Sources */,
-				D0C012581D32B02E00488AE2 /* FormStepperCell.swift in Sources */,
 				D0C011E81D31900300488AE2 /* TeamViewController.swift in Sources */,
-				D0C012501D32B02E00488AE2 /* FormButtonCell.swift in Sources */,
 				D0C0123A1D31B40800488AE2 /* RosterCell.swift in Sources */,
-				D0C012571D32B02E00488AE2 /* FormSliderCell.swift in Sources */,
-				D0C012561D32B02E00488AE2 /* FormSelectorCell.swift in Sources */,
 				D0C0126C1D32D20F00488AE2 /* Data.swift in Sources */,
-				D0C012671D32B03F00488AE2 /* FormRowDescriptor.swift in Sources */,
-				D0C012691D32B03F00488AE2 /* FormErrorType.swift in Sources */,
 				D0B540101D389A720012E4D0 /* MoveCell.swift in Sources */,
-				D0C012611D32B03600488AE2 /* FormViewController.swift in Sources */,
-				D0C012511D32B02E00488AE2 /* FormCheckCell.swift in Sources */,
-				D0C0124E1D32B02E00488AE2 /* FormTitleCell.swift in Sources */,
 				D0C012361D319C8C00488AE2 /* TeamCell.swift in Sources */,
 				D0C012911D355A2D00488AE2 /* PlayerViewController.swift in Sources */,
-				D0C0124F1D32B02E00488AE2 /* FormValueCell.swift in Sources */,
 				D0C012151D3190E300488AE2 /* Player.swift in Sources */,
-				D0C012551D32B02E00488AE2 /* FormSegmentedControlCell.swift in Sources */,
 				D0C011E61D31900300488AE2 /* AppDelegate.swift in Sources */,
-				D0C012681D32B03F00488AE2 /* FormSectionDescriptor.swift in Sources */,
 				D0C0128F1D342AE800488AE2 /* PlayerFormViewController.swift in Sources */,
-				D0C012521D32B02E00488AE2 /* FormDateCell.swift in Sources */,
-				D0C012591D32B02E00488AE2 /* FormSwitchCell.swift in Sources */,
 				D0C012191D3190F600488AE2 /* Play.swift in Sources */,
 				D0C012931D355D7D00488AE2 /* PlayerCell.swift in Sources */,
-				D0C012531D32B02E00488AE2 /* FormLabelCell.swift in Sources */,
 				D0C012381D31B0D700488AE2 /* RosterViewController.swift in Sources */,
-				D0C012601D32B03600488AE2 /* FormSelector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,8 +571,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -655,8 +619,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -675,6 +641,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -682,8 +649,10 @@
 		};
 		D0C0120B1D31900300488AE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF3B1B2E8274B4B9B9184B1A /* Pods-CoachPal.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 96QE7H4LVL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CoachPal/RealmSwift.framework",
@@ -693,13 +662,16 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinmatsnev.CoachPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		D0C0120C1D31900300488AE2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E8B069F6539D2F2187D1CE9 /* Pods-CoachPal.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 96QE7H4LVL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CoachPal/RealmSwift.framework",
@@ -709,6 +681,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinmatsnev.CoachPal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -720,6 +693,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinmatsnev.CoachPalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoachPal.app/CoachPal";
 			};
 			name = Debug;
@@ -732,6 +706,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinmatsnev.CoachPalTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoachPal.app/CoachPal";
 			};
 			name = Release;
@@ -743,6 +718,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinmatsnev.CoachPalUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CoachPal;
 			};
 			name = Debug;
@@ -754,6 +730,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.justinmatsnev.CoachPalUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = CoachPal;
 			};
 			name = Release;

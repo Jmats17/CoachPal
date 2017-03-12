@@ -21,7 +21,7 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
 
     func readTasksAndUpdateUI(){
         
-        results = realm.objects(Team)
+        results = realm.objects(Team.self)
         self.tableViewTeams.setEditing(false, animated: true)
         self.tableViewTeams.reloadData()
 
@@ -29,13 +29,13 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
 
     @IBAction func addTeam() {
         var teamNameTextField : UITextField?
-        let alertController = UIAlertController(title: "Add Team", message: "Add your team name below", preferredStyle: .Alert)
-        alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+        let alertController = UIAlertController(title: "Add Team", message: "Add your team name below", preferredStyle: .alert)
+        alertController.addTextField { (textField) -> Void in
             teamNameTextField = textField
             teamNameTextField?.placeholder = "South Golden Hawks"
-            teamNameTextField?.autocapitalizationType = .Words
+            teamNameTextField?.autocapitalizationType = .words
         }
-        let okAction = UIAlertAction(title: "Add", style: .Default) { (action) in
+        let okAction = UIAlertAction(title: "Add", style: .default) { (action) in
             if teamNameTextField?.text != "" {
                 let team = Team()
                 team.teamName = (teamNameTextField?.text)!
@@ -46,13 +46,13 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
                 })
             }
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             print("cancel pressed")
         }
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
@@ -62,7 +62,7 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
      
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         readTasksAndUpdateUI()
@@ -73,11 +73,11 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
             let team = self.results[indexPath.row]
             
-            let delete = UITableViewRowAction(style: .Default, title: "Delete") { action, index in
+            let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
                 try! self.realm.write({ () -> Void in
                     self.realm.delete(team)
                     self.readTasksAndUpdateUI()
@@ -91,49 +91,49 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
             return 1
 
         
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
             return "Teams"
             
         
     }
     
-    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.contentView.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1.0)
         header.textLabel!.textColor = UIColor(red: 171/255, green: 171/255, blue: 171/255, alpha: 1.0)
         header.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 14.0)
     }
   
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
 
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
             let selectedTeam = results[indexPath.row]
             team = selectedTeam
             
-            self.performSegueWithIdentifier("teamtoroster", sender: self)
+            self.performSegue(withIdentifier: "teamtoroster", sender: self)
             
 
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "teamtoroster") {
             
-            let rosterViewController = segue.destinationViewController as! RosterViewController
+            let rosterViewController = segue.destination as! RosterViewController
             rosterViewController.team = team
             
             
@@ -141,7 +141,7 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
 
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
             if results.count == 0 {
                 return 0
@@ -153,8 +153,8 @@ class TeamViewController : UIViewController, UITableViewDelegate, UITableViewDat
         
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            let cell = tableViewTeams.dequeueReusableCellWithIdentifier("TeamCell") as! TeamCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableViewTeams.dequeueReusableCell(withIdentifier: "TeamCell") as! TeamCell
             let team = results[indexPath.row]
             
             cell.teamName.text = team.teamName

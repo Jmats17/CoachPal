@@ -24,10 +24,14 @@ class PlayerViewController : UIViewController, UITableViewDelegate,UITableViewDa
     @IBOutlet var tableView : UITableView!
     
     func loadPlayerInfo() {
+        if let wrestler = player {
+            if let age = wrestler.age {
+                print("\(age)")
+            }
+        }
         if let name = player.name  {
             if let age = player.age {
                 nameAndAgeLabel.text = "\(name), \(age)"
-
             }
             else {
                 nameAndAgeLabel.text = "\(player.name), Age: ??"
@@ -72,30 +76,29 @@ class PlayerViewController : UIViewController, UITableViewDelegate,UITableViewDa
                 lossLabel.text = "??"
             }
         }
-        if let profImage = player.profilePicture {
-            
-            profileImage.image = UIImage(data: profImage)
-        }
-        else {
-            profileImage.image = profileImage.image
-        }
+//        if let profImage = player.profilePicture {
+//            profileImage.image = UIImage(data: profImage)
+//        }
+//        else {
+//            profileImage.image = profileImage.image
+//        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        navBar.setBackgroundImage(UIImage(), for: .default)
         // Sets shadow (line below the bar) to a blank image
         navBar.shadowImage = UIImage()
         // Sets the translucent background color
         navBar.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         // Set translucent. (Default value is already true, so this can be removed if desired.)
-        navBar.translucent = true
+        navBar.isTranslucent = true
         tableView.delegate = self
         tableView.dataSource = self
         navBar.topItem?.title = player.name!
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if player.plays.count == 0 {
             return 0
         }
@@ -104,8 +107,8 @@ class PlayerViewController : UIViewController, UITableViewDelegate,UITableViewDa
         }
     }
    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MoveCell") as! MoveCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MoveCell") as! MoveCell
         let play = self.player.plays[indexPath.row]
         cell.moveLabel.text = play.playName
         cell.successLabel.text = "Success: \(String(format: "%.1f", (play.successRate * 100)))%"
@@ -113,11 +116,11 @@ class PlayerViewController : UIViewController, UITableViewDelegate,UITableViewDa
         return cell
     }
     
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let play = self.player.plays[indexPath.row]
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as! MoveCell
+        let cell = tableView.cellForRow(at: indexPath) as! MoveCell
         
-        let success = UITableViewRowAction(style: .Default, title: "Success") { action, index in
+        let success = UITableViewRowAction(style: .default, title: "Success") { action, index in
             try! self.realm.write({ () -> Void in
                 play.totalPlaysDone += 1
                 play.totalPlaysSuccess += 1
@@ -129,7 +132,7 @@ class PlayerViewController : UIViewController, UITableViewDelegate,UITableViewDa
         }
         success.backgroundColor = UIColor(red: 126/255, green: 211/255, blue: 33/255, alpha: 1.0)
         
-        let fail = UITableViewRowAction(style: .Default, title: "Fail") { action, index in
+        let fail = UITableViewRowAction(style: .default, title: "Fail") { action, index in
             try! self.realm.write({  () -> Void in
                 play.totalPlaysDone += 1
                 play.successRate = (play.totalPlaysSuccess / play.totalPlaysDone)
@@ -142,11 +145,11 @@ class PlayerViewController : UIViewController, UITableViewDelegate,UITableViewDa
         return [success, fail]
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     }
     
     func readTasksAndUpdateUI(){
@@ -155,7 +158,7 @@ class PlayerViewController : UIViewController, UITableViewDelegate,UITableViewDa
         self.tableView.reloadData()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         loadPlayerInfo()
         readTasksAndUpdateUI()
 
@@ -164,40 +167,40 @@ class PlayerViewController : UIViewController, UITableViewDelegate,UITableViewDa
     @IBAction func addMove() {
         let play = Play()
         var moveNameTextField : UITextField?
-        let alertController = UIAlertController(title: "", message: "Add Play/Move" , preferredStyle: .Alert)
-        alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+        let alertController = UIAlertController(title: "", message: "Add Play/Move" , preferredStyle: .alert)
+        alertController.addTextField { (textField) -> Void in
             moveNameTextField = textField
             moveNameTextField?.placeholder = "Double Leg Takedown"
-            moveNameTextField?.autocapitalizationType = .Words
+            moveNameTextField?.autocapitalizationType = .words
         }
-        let okAction = UIAlertAction(title: "Add", style: .Default) { (action) in
+        let okAction = UIAlertAction(title: "Add", style: .default) { (action) in
             if moveNameTextField?.text != "" {
                 let assignedPlayer = self.player
                 play.playName = (moveNameTextField?.text)!
                 try! self.realm.write({ () -> Void in
-                    assignedPlayer.plays.append(play)
+                    assignedPlayer?.plays.append(play)
                     self.readTasksAndUpdateUI()
                     print(self.player.plays)
                 })
             }
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
             print("cancel pressed")
         }
         alertController.addAction(okAction)
         alertController.addAction(cancelAction)
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
   
     @IBAction func edit() {
         Data.sharedInstance.cameFromPlayer = true
         Data.sharedInstance.player = player
-        self.presentViewController(PlayerFormViewController(), animated: true, completion: nil)
+        self.present(PlayerFormViewController(), animated: true, completion: nil)
     }
     
     @IBAction func back() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
       //  self.performSegueWithIdentifier("playertoroster", sender: self)
     }
     

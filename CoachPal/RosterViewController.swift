@@ -36,20 +36,20 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
  
     
     @IBAction func back() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.tableView.reloadData()
     }
     
     @IBAction func addPlayer() {
         Data.sharedInstance.team = team
-        self.presentViewController(PlayerFormViewController(), animated: true, completion: nil)
+        self.present(PlayerFormViewController(), animated: true, completion: nil)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if team.teamList.isEmpty {
             return 0
         }
@@ -58,24 +58,24 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedPlayer = team.teamList[indexPath.row]
         player = selectedPlayer
         
-        self.performSegueWithIdentifier("rostertoplayer", sender: self)
+        self.performSegue(withIdentifier: "rostertoplayer", sender: self)
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "rostertoplayer") {
-            let playerViewController = segue.destinationViewController as! PlayerViewController
+            let playerViewController = segue.destination as! PlayerViewController
             playerViewController.player = player
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let unknownValue = "??"
-        let cell = tableView.dequeueReusableCellWithIdentifier("RosterCell") as! RosterCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RosterCell") as! RosterCell
         
         let player = team.teamList[indexPath.row]
         if let playerName = player.name {
@@ -83,13 +83,13 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
 
         }
         let playerWeight = player.weight ?? unknownValue
-        if let playerProfPic = player.profilePicture {
-            let image = UIImage(data: playerProfPic)
-            cell.playerPic.image = image
-        }
-        else {
+//        if let playerProfPic = player.profilePicture {
+//            let image = UIImage(data: (playerProfPic) as Data)
+//            cell.playerPic.image = image
+//        }
+//        else {
             cell.playerPic.image = nil
-        }
+//        }
         let playerHeight = player.height ?? unknownValue
         let playerWins = player.wins ?? unknownValue
         let playerLosses = player.losses ?? unknownValue
@@ -101,10 +101,10 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
-    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deletedPlayer = team.teamList[indexPath.row]
         
-        let delete = UITableViewRowAction(style: .Default, title: "Delete") { action, index in
+        let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
             try! self.realm.write({ () -> Void in
                 print(deletedPlayer)
                 print(deletedPlayer.plays)
@@ -120,22 +120,22 @@ class RosterViewController : UIViewController, UITableViewDelegate, UITableViewD
         return [delete]
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
     }
     
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header: UITableViewHeaderFooterView = view as! UITableViewHeaderFooterView
         header.contentView.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1.0)
         header.textLabel!.textColor = UIColor(red: 171/255, green: 171/255, blue: 171/255, alpha: 1.0)
         header.textLabel?.font = UIFont(name: "HelveticaNeue-Light", size: 14.0)
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         return "Players"
         
